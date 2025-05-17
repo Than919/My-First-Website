@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Date Difference Calculator</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 40px; text-align: center; }
+    input { padding: 10px; margin: 10px; }
+    button { padding: 10px 20px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Date Difference Calculator</h1>
+  <label>Start Date: <input type="date" id="startDate" /></label><br/>
+  <label>End Date: <input type="date" id="endDate" /></label><br/>
+  <button onclick="calculateDifference()">Calculate Difference</button>
+  <h2 id="result"></h2>
+
+  <script>
+    function calculateDifference() {
+      const start = new Date(document.getElementById('startDate').value);
+      const end = new Date(document.getElementById('endDate').value);
+
+      if (!start.getTime() || !end.getTime()) {
+        document.getElementById('result').innerText = 'Please select both dates.';
+        return;
+      }
+
+      if (end < start) {
+        document.getElementById('result').innerText = 'End date must be after start date.';
+        return;
+      }
+
+      const diffTime = Math.abs(end - start);
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      document.getElementById('result').innerText = `Difference: ${diffDays} day(s)`;
+    }
+  </script>
+</body>
+</html>
