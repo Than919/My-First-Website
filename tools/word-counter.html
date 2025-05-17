@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Word Counter - AIProTools</title>
+<style>
+  body { font-family: Arial, sans-serif; padding: 20px; }
+  textarea { width: 100%; height: 150px; }
+  .result { margin-top: 15px; font-weight: bold; }
+</style>
+</head>
+<body>
+  <h1>Word Counter</h1>
+  <textarea id="textInput" placeholder="Yahan apna text likho..."></textarea>
+  <div class="result" id="result">Words: 0 | Characters: 0</div>
+
+  <script>
+    const textInput = document.getElementById('textInput');
+    const result = document.getElementById('result');
+
+    textInput.addEventListener('input', () => {
+      const text = textInput.value.trim();
+      const words = text === '' ? 0 : text.split(/\s+/).length;
+      const chars = text.length;
+      result.textContent = `Words: ${words} | Characters: ${chars}`;
+    });
+  </script>
+</body>
+</html>
