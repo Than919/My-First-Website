@@ -1,38 +1,69 @@
-<!DOCTYPE html>
-<html>
+<<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Meri Pehli Website</title>
-    <style>
-        body {
-            background-color: #f0f8ff;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-        }
-        h1 {
-            color: #3333cc;
-        }
-        p {
-            color: #666666;
-            font-size: 18px;
-        }
-        button {
-            font-size: 16px;
-            padding: 10px 20px;
-            margin-top: 20px;
-            cursor: pointer;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AIProTools - Boost Your Productivity with AI & Online Tools</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Welcome to meri website!</h1>
-    <p>Ye mera pehla webpage hai styled with CSS and interactive with JavaScript.</p>
-    <button onclick="greet()">Click me</button>
+  <header>
+    <div class="container">
+      <h1>AIProTools</h1>
+      <nav>
+        <a href="#tools">Tools</a>
+        <a href="#ai">AI Tools</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-    <script>
-        function greet() {
-            alert('Hello bhai! Website seekh raha hai tu.');
-        }
-    </script>
+  <section class="hero">
+    <div class="container">
+      <h2>Boost your productivity with powerful AI and online tools – all in one place!</h2>
+      <p>Free tools like Word Counter, Age Calculator, QR Code Generator & AI-powered helpers.</p>
+    </div>
+  </section>
+
+  <section id="tools" class="tools-section container">
+    <h3>Popular Online Tools</h3>
+    <div class="tool-list">
+      <div class="tool-card">
+        <h4>Word Counter</h4>
+        <p>Count words and characters easily.</p>
+        <button onclick="location.href='tools/word-counter.html'">Try Now</button>
+      </div>
+      <div class="tool-card">
+        <h4>Age Calculator</h4>
+        <p>Calculate your exact age in years, months, days.</p>
+        <button onclick="location.href='tools/age-calculator.html'">Try Now</button>
+      </div>
+      <div class="tool-card">
+        <h4>QR Code Generator</h4>
+        <p>Create QR codes for URLs or text.</p>
+        <button onclick="location.href='tools/qr-generator.html'">Try Now</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="ai" class="ai-tools container">
+    <h3>AI Powered Tools</h3>
+    <ul>
+      <li>Resume Generator</li>
+      <li>Blog Content Writer</li>
+      <li>Image Enhancer</li>
+    </ul>
+  </section>
+
+  <section id="contact" class="contact-section container">
+    <h3>Contact Us</h3>
+    <p>Have questions? Email us at <a href="mailto:support@aiprotools.com">support@aiprotools.com</a></p>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 AIProTools. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
