@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Unit Converter</title>
+  <style>
+    body { font-family: Arial; padding: 40px; text-align: center; }
+    input, select { padding: 10px; margin: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Unit Converter</h1>
+
+  <div>
+    <input type="number" id="inputValue" placeholder="Enter value" />
+    <select id="conversionType">
+      <option value="cmToInch">CM to Inches</option>
+      <option value="inchToCm">Inches to CM</option>
+      <option value="kgToLb">KG to Pounds</option>
+      <option value="lbToKg">Pounds to KG</option>
+      <option value="kmToMi">KM to Miles</option>
+      <option value="miToKm">Miles to KM</option>
+    </select>
+    <br>
+    <button onclick="convert()">Convert</button>
+    <h2 id="result"></h2>
+  </div>
+
+  <script>
+    function convert() {
+      const value = parseFloat(document.getElementById('inputValue').value);
+      const type = document.getElementById('conversionType').value;
+      let result = '';
+
+      if (isNaN(value)) {
+        result = 'Please enter a valid number.';
+      } else {
+        switch (type) {
+          case 'cmToInch': result = (value / 2.54).toFixed(2) + ' in'; break;
+          case 'inchToCm': result = (value * 2.54).toFixed(2) + ' cm'; break;
+          case 'kgToLb': result = (value * 2.20462).toFixed(2) + ' lbs'; break;
+          case 'lbToKg': result = (value / 2.20462).toFixed(2) + ' kg'; break;
+          case 'kmToMi': result = (value * 0.621371).toFixed(2) + ' mi'; break;
+          case 'miToKm': result = (value / 0.621371).toFixed(2) + ' km'; break;
+        }
+      }
+
+      document.getElementById('result').innerText = result;
+    }
+  </script>
+</body>
+</html>
